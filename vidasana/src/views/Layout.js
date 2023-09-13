@@ -37,7 +37,7 @@ const Layout = () => {
                         <ul>
                             <li className=''><Link to="/admin">INICIO</Link></li>
                             <li className=''><Link to="/admin">USUARIO</Link></li>
-                            <li className=''><Link to="/admin">EJERCICIOS</Link></li>
+                            <li className=''><Link to="/admin/lista-ejercicios">EJERCICIOS</Link></li>
                             <li className=''><Link to="/admin">REPORTE DE PASOS</Link></li>
                             <li className=''><Link to="/admin">REPORTE DE PESOS</Link></li>
                             <li className=''><Link to="/admin">REPORTE DE EJERCICIOS</Link></li>
