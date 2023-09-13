@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: 'Poppins'
+}
+
+.container-cabecera{
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.header{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)),
+        url(../assets/banner.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+}
+
+.header-main{
+    /* background-color: black; */
+    min-height: 12vh;
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+}
+
+.subheader-main{
+    background-color: #64A313;
+    min-height: 12vh;
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+}
+
+.main{
+    /* background-color: blue; */
+    /* min-height: 100%; */
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+    margin: 20px 0;
+}
+
+.main h1{
+    font-size: 50px;
+    text-align: center;
+    margin: 15px;
+}
+
+.msg-principal{
+    background-color: #C5C5C5;
+    padding: 100px;
+}
+
+.msg-principal p{
+    font-size: 30px;
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    color: #FFFDFC;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.logo-main{
+    width: 300px;
+    margin: 5px 0;
+}
+
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a{
+    font-size: 18px;
+    padding: 20px;
+    display: block;
+    font-weight: 600;
+    color: #FFF;
+}
+
+.header-main .menu .navbar ul li span{
+    font-size: 18px;
+    padding: 20px;
+    display: block;
+    font-weight: 600;
+    color: black;
+    cursor: pointer;
+}
+
+.subheader-main ul li{
+    position: relative;
+    float: left;
+}
+
+.subheader-main ul li a{
+    font-size: 18px;
+    padding: 20px;
+    display: block;
+    font-weight: 600;
+    color: #FFF;
+    text-decoration: none !important;
+}
+
+.header-content{
+    text-align: center
+}
+
+.header-content h1{
+    font-size: 75px;
+    line-height: 80px;
+    color: #F9FAFC;
+    margin-bottom: 35px;
+    margin-top: 35px
+}
+
+.header-content p{
+    font-size: 16px;
+    color: #C5C5C5;
+    padding: 0 250PX;
+    margin-bottom: 25px;
+}
+
+
+
+#menu{
+    display: none;
+}
+
+.menu-icono{
+    width: 25px;
+}
+
+.menu label{
+    cursor: pointer;
+    display: none;
+}
+
+.section{
+    padding: 80px 0;
+    /* background-color: #E1E2E6; */
+    position: relative;
+}
+
+.section-content{
+    text-align: center;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+.section-content h2{
+    font-size: 55px;
+    line-height: 70px;
+    color: #64A313;
+    text-transform: uppercase;
+    /* padding: 0 250px; */
+    margin-bottom: 15px;
+}
+
+.section-content p{
+    font-size: 16px;
+    color: #414247;
+    /* padding: 0 250px; */
+    margin-bottom: 35px;
+}
+
+.img-dispositivos{
+    width: 200px
+}
+
+@media (max-width: 991px) {
+    .menu{
+        padding: 30px;
+    }
+
+    .menu label{
+        display: initial;
+    }
+
+    .menu .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #64A313;
+        display: none;
+
+    }
+
+    .menu .navbar ul li{
+        width: 100%
+    }
+
+    #menu:checked ~ .navbar{
+        display: initial
+    }
+
+    .header{
+        min-height: 0vh;
+    }
+
+    .header-main{
+        min-height: 0vh;
+    }
+
+    .header-main img{
+        display: none;
+    }
+
+    .subheader-main ul li a{
+        font-size: 18px;
+        /* padding: 20px; */
+        display: block;
+        font-weight: 600;
+        color: #FFF;
+        text-decoration: none !important;
+    }
+
+    .main{
+        display: flex;
+        align-items: center;
+        min-width: 100px;
+        margin: 0;
+    }
+
+    .header-content{
+        padding: 100px 30px;
+    }
+
+    .header-content p{
+        padding: 0;
+    }
+
+    .section{
+        padding: 30px;
+    }
+
+    .section h2{
+        padding: 0;
+        font-size: 40px;
+    }
+
+    .section p{
+        padding: 0;
+    }
+
+    .section-content{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
