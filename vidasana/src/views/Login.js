@@ -2,8 +2,6 @@ import React, {useState, useContext} from "react";
 import {CognitoUser, AuthenticationDetails} from "amazon-cognito-identity-js";
 import UserPool from "../UserPool";
 import '../components/style/Signup.css';
-import user_icon from '../components/assets/person.png'
-import password_icon from '../components/assets/password.png'
 import logo from '../components/assets/logo_vida_sana.jpg'
 import imgLogin from '../components/assets/img_login.jpg'
 import * as AWS from 'aws-sdk/global'
@@ -40,11 +38,11 @@ const Login = () =>{
             onFailure: (error) => {
                 setVisibleMsgError(true);           
                 if(error.message == "User does not exist."){
-                    setMsgError("Este usuario no se encuentra registrado");
+                    setMsgError("Este usuario no se encuentra registrado, intentalo de nuevo");
                 }else if(error.message == "Incorrect username or password."){
-                    setMsgError("Contraseña incorrecta.");
+                    setMsgError("Contraseña incorrecta, intentalo denuevo");
                 }else if(error.message == "Missing required parameter USERNAME"){
-                    setMsgError("Debe ingresar el usuario");
+                    setMsgError("Debe ingresar el usuario y/o contraseña");
                 }else{
                     setMsgError("Ocurrió un error al iniciar sesión");
                 }
@@ -94,22 +92,22 @@ const Login = () =>{
                         <img src={logo} alt=""/>
                         <div className="tittle">Iniciar sesión</div>
                         <div className="underline"></div>
-                    </div>
+                    </div>                      
                         <div className="inputs">
+                            <h3>USUARIO:</h3>
                             <div className="input">
-                                <img src={user_icon} alt=""/>
                                 <input
                                     type="text" 
-                                    placeholder="Usuario" 
+                                    placeholder="Introduce tu usuario" 
                                     value={email}
                                     onChange={(event) => setEmail(event.target.value)} 
                                 ></input>
                             </div>
+                            <h3 className="mt-3">CONTRASEÑA:</h3>
                             <div className="input">
-                                <img src={password_icon} alt=""/>
                                 <input 
                                     type="password" 
-                                    placeholder="Contraseña"
+                                    placeholder="Introduce tu contraseña"
                                     value={password}
                                     onChange={(event) => setPassword(event.target.value)}
                                     id="login-password"
@@ -120,7 +118,7 @@ const Login = () =>{
                             {visibleMsgError && <p className="msgError">{msgError}</p>}
                         </div>
                         <div className="submit-container">
-                            <div className="submit" onClick={onSubmit}>Iniciar sesión</div>
+                            <button className="submit" onClick={onSubmit}>Iniciar sesión</button>
                         </div>
                 </div>
                 <div className="container-img">
